@@ -23,7 +23,7 @@ export default class Pedido {
 
     getNumeroElementos = _ => this._elementosPedidos.length;
 
-    getProductos = _ => {
+    getNumeroProductos = _ => {
         let nProductos = 0;
         this._elementosPedidos.forEach(elemento => {
             nProductos += elemento.cantidad;
@@ -47,7 +47,7 @@ export default class Pedido {
         }\n-${
         this.getNumeroElementos()
         } elementos con ${
-        this.getProductos()
+        this.getNumeroProductos()
         } productos-\ntotal: ${
         this.getCostoTotal()
         }`;
