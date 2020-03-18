@@ -19,7 +19,8 @@ export default class Pedido {
         this._numeroPedido = Date.now();
     }
 
-    esIgual = pedido => this._numeroPedido == pedido._numeroPedido;
+    esIgual = pedido =>
+        this.getResumen() == pedido.getResumen();
 
     getNumeroElementos = _ => this._elementosPedidos.length;
 
