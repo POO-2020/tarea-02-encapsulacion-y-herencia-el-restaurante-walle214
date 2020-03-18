@@ -1,4 +1,4 @@
-import Cliente from "./Cliente";
+import Cliente from "./Cliente.js";
 
 export default class ClienteFrecuente extends Cliente {
     constructor({ nombre, direccion, telefono, fechaRegistro }) {
