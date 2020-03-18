@@ -11,13 +11,16 @@ export default class Pedido {
      * @param {Tiempo} hora 
      * @param {Cliente} cliente 
      */
-    constructor({fecha, hora, cliente}) {
+    constructor({ fecha, hora, cliente }) {
         this._fecha = fecha;
         this._hora = hora;
         this._cliente = cliente;
         this._elementosPedidos = [];
         this._numeroPedido = Date.now();
     }
+
+    esIgual = pedido => this._numeroPedido == pedido._numeroPedido;
+
     getNumeroElementos = _ => this._elementosPedidos.length;
 
     getProductos = _ => {
