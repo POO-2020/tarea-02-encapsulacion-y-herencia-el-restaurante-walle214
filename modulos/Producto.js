@@ -10,6 +10,7 @@ export default class Producto {
         this._nombre = nombre;
         this._precio = precio;
     }
+    getValor = _ => this._precio.getValor();
     getDescripcion = _ => `${this._nombre} ${this._precio.getPrecio()}`;
     esIgual = producto => this.getDescripcion() == producto.getDescripcion();
 }

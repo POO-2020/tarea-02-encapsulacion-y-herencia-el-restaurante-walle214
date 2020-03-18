@@ -26,7 +26,7 @@ export default class Pedido {
     getNumeroProductos = _ => {
         let nProductos = 0;
         this._elementosPedidos.forEach(elemento => {
-            nProductos += elemento.cantidad;
+            nProductos += elemento.getCantidad();
         });
         return nProductos;
     }
@@ -34,9 +34,9 @@ export default class Pedido {
     getCostoTotal = _ => {
         let costo = 0;
         this._elementosPedidos.forEach(elemento => {
-            costo += elemento.cantidad * elemento.producto.precio.valor;
+            costo += elemento.getCosto();
         });
-        return new Precio(costo).getPrecio();
+        return new Precio(Number(costo)).getPrecio();
     }
 
     getResumen = _ =>
