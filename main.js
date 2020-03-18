@@ -53,3 +53,5 @@ const restaurante = new Restaurante({
 
 const probarPrecio = _ => console.log(precio1.getPrecio(), precio3.getPrecio());
 // probarPrecio();
+const probarTiempo = _ => console.log(tiempo2.getFormato12(), tiempo2.getFormato24());
+// probarTiempo();
