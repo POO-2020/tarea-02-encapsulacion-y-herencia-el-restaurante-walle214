@@ -37,12 +37,15 @@ const producto3 = new Producto('Quesadillas', precio3);
 
 const elementoPedido1 = new ElementoPedido(producto1, 5);
 const elementoPedido2 = new ElementoPedido(producto2, 5);
-const elementoPedido3 = new ElementoPedido(producto3, 5);
+const elementoPedido3 = new ElementoPedido(producto3, 1);
 
 
 const pedido1 = new Pedido({ fecha: fecha1, hora: tiempo1, cliente: cliente1 });
+pedido1.agregarElemento(elementoPedido1);
 const pedido2 = new Pedido({ fecha: fecha2, hora: tiempo2, cliente: cliente1 });
+pedido2.agregarElemento(elementoPedido2);
 const pedido3 = new Pedido({ fecha: fecha3, hora: tiempo3, cliente: cliente2 });
+pedido3.agregarElemento(elementoPedido3);
 
 const restaurante = new Restaurante({
     nombre: 'Huevos en frio',
@@ -65,3 +68,24 @@ const probarFechas = _ =>
         fecha2.getSemanas(),
     )
 // probarFechas();
+const probarClientes = _ =>
+    console.log(cliente1.getPerfil(), '\n', cliente2.getPerfil());
+// probarClientes();
+const probarDireccion = _ =>
+    console.log(direccion.getFormatoCorto(), direccion.getFormatoLargo());
+// probarDireccion();
+const probarProducto = _ =>
+    console.log(producto1.getDescripcion(), producto1.esIgual(producto2));
+// probarProducto();
+const probarElementoPedido = _ => console.log(elementoPedido1.getDescripcion());
+// probarElementoPedido();
+const probarPedido = _ => {
+    console.log(pedido1.agregarElemento(elementoPedido2));
+    console.log(pedido1.agregarElemento(elementoPedido3));
+    console.log(pedido1.getResumen());
+    console.log(pedido1.getNumeroElementos());
+    console.log(pedido1.getNumeroProductos());
+    console.log(pedido1.getCostoTotal());
+    pedido1.listarElementos();
+}
+// probarPedido();
