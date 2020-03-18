@@ -89,3 +89,21 @@ const probarPedido = _ => {
     pedido1.listarElementos();
 }
 // probarPedido();
+const probarRestaurante = _ => {
+    console.log(restaurante.registrarProducto(producto1));
+    console.log(restaurante.registrarProducto(producto1));
+    console.log(restaurante.registrarProducto(producto2));
+    console.log(restaurante.registrarProducto(producto3));
+
+    restaurante.listarProductos();
+    console.log(restaurante.registrarPedido(pedido1));
+    console.log(restaurante.registrarPedido(pedido1));
+    console.log(restaurante.registrarPedido(pedido2));
+    console.log(restaurante.registrarPedido(pedido3));
+    console.log('Eliminar....');
+    console.log(restaurante.eliminarPedido(pedido1));
+    console.log('Editar....');
+    console.log(restaurante.modificarPedido(pedido2, pedido1));
+
+}
+// probarRestaurante();
