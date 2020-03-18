@@ -7,8 +7,8 @@ export default class ElementoPedido {
      * @param {Number} cantidad 
      */
     constructor(producto, cantidad) {
-        this.producto = producto;
-        this.cantidad = cantidad;
+        this._producto = producto;
+        this._cantidad = cantidad;
     }
-    getDescripcion = _ => `${this.cantidad} x ${this.producto.getDescripcion()}`;
+    getDescripcion = _ => `${this._cantidad} x ${this._producto.getDescripcion()}`;
 }

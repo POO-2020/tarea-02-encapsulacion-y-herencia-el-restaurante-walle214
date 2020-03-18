@@ -10,15 +10,29 @@ export default class Direccion {
      * @param {String} municipio 
      */
     constructor(calle, numeroExterior, numeroInterior = "No existe", colonia, codigoPostal, ciudad, municipio) {
-        this.calle = calle;
-        this.numeroExterior = numeroExterior;
-        this.numeroInterior = numeroInterior;
-        this.colonia = colonia;
-        this.codigoPostal = codigoPostal;
-        this.ciudad = ciudad;
-        this.municipio = municipio;
+        this._calle = calle;
+        this._numeroExterior = numeroExterior;
+        this._numeroInterior = numeroInterior;
+        this._colonia = colonia;
+        this._codigoPostal = codigoPostal;
+        this._ciudad = ciudad;
+        this._municipio = municipio;
     }
-    getFormatoCorto = _ => `${this.calle} ${this.numeroExterior}`;
+    getFormatoCorto = _ => `${this._calle} ${this._numeroExterior}`;
     getFormatoLargo = _ =>
-        `${this.calle} ${this.numeroExterior}\nNumero interior: ${this.numeroInterior}\nColonia ${this.colonia}\n${this.ciudad},${this.municipio} ${this.codigoPostal}`;
+        `${
+        this._calle
+        } ${
+        this._numeroExterior
+        }\nNumero interior: ${
+        this._numeroInterior
+        }\nColonia ${
+        this._colonia
+        }\n${
+        this._ciudad
+        },${
+        this._municipio
+        } ${
+        this._codigoPostal
+        }`;
 }

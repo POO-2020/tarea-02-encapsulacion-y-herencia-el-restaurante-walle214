@@ -8,9 +8,9 @@ export default class Cliente {
      * @param {Number} telefono 
      */
     constructor(nombre, direccion, telefono) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
+        this._nombre = nombre;
+        this._direccion = direccion;
+        this._telefono = telefono;
     }
-    getPerfil = _ => `${this.nombre}\n${this.direccion.getFormatoCorto()}\n${this.telefono}`;
+    getPerfil = _ => `${this._nombre}\n${this._direccion.getFormatoCorto()}\n${this._telefono}`;
 }

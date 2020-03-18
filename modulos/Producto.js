@@ -7,8 +7,8 @@ export default class Producto {
      * @param {Precio} precio 
      */
     constructor(nombre, precio) {
-        this.nombre = nombre;
-        this.precio = precio;
+        this._nombre = nombre;
+        this._precio = precio;
     }
-    getDescripcion = _ => `${this.nombre} ${this.precio.getPrecio()}`;
+    getDescripcion = _ => `${this._nombre} ${this._precio.getPrecio()}`;
 }

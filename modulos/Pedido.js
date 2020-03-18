@@ -12,35 +12,45 @@ export default class Pedido {
      * @param {Cliente} cliente 
      */
     constructor(fecha, hora, cliente) {
-        this.fecha = fecha;
-        this.hora = hora;
-        this.cliente = cliente;
-        this.elementosPedidos = [];
+        this._fecha = fecha;
+        this._hora = hora;
+        this._cliente = cliente;
+        this._elementosPedidos = [];
     }
-    getNumeroElementos = _ => this.elementosPedidos.length;
+    getNumeroElementos = _ => this._elementosPedidos.length;
 
     getProductos = _ => {
         let nProductos = 0;
-        this.elementosPedidos.forEach(elemento => {
-            nProductos+=elemento.cantidad;
+        this._elementosPedidos.forEach(elemento => {
+            nProductos += elemento.cantidad;
         });
         return nProductos;
     }
 
     getCostoTotal = _ => {
         let costo = 0;
-        this.elementosPedidos.forEach(elemento => {
+        this._elementosPedidos.forEach(elemento => {
             costo += elemento.cantidad * elemento.producto.precio.valor;
         });
         return new Precio(costo).getPrecio();
     }
 
     getResumen = _ =>
-        `${this.fecha.getFecha()}  ${this.hora.getFormato12()}\n-${this.getNumeroElementos()} elementos con ${this.getProductos()} productos-\ntotal: ${this.getCostoTotal()}`;
+        `${
+        this._fecha.getFecha()
+        }  ${
+        this._hora.getFormato12()
+        }\n-${
+        this.getNumeroElementos()
+        } elementos con ${
+        this.getProductos()
+        } productos-\ntotal: ${
+        this.getCostoTotal()
+        }`;
     /**
      * @param {ElementoPedido} elementos
      */
-    agregarElemento = elemento => this.elementosPedidos.push(elemento);
+    agregarElemento = elemento => this._elementosPedidos.push(elemento);
 
-    listarElementos = _ => this.elementosPedidos.forEach(elemento => console.log(elemento.getDescripcion(), '\n'));
+    listarElementos = _ => this._elementosPedidos.forEach(elemento => console.log(elemento.getDescripcion()));
 }
